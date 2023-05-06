@@ -1,19 +1,20 @@
 package figures;
 
-public class Polygon extends Figure implements Perimeter{
+import figures.base.Figure;
+import figures.base.IArea;
+import figures.base.Perimeter;
 
-    protected Integer sidesCount;
-    protected double[] sides;
+public abstract class Polygon extends Figure implements Perimeter, IArea {
+   private Integer sidesCount;
 
-    public Polygon(String name,Integer sidesCount, double[] sides) {
+    public Polygon(String name, Integer sidesCount) {
         super(name);
         this.sidesCount = sidesCount;
-        this.sides = sides;
     }
 
     @Override
-    public String getPerimeter() {
+    public abstract double getPerimeter();
 
-        return null;
-    }
+    @Override
+    public abstract double getArea();
 }

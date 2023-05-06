@@ -1,17 +1,30 @@
 package figures;
 
-public class Rectangle extends Polygon implements Perimeter{
-    public Rectangle(String name,Integer sidesCount, double[] sides) {
-        super(name,sidesCount,sides);
+public class Rectangle extends Polygon {
+    private Double length;
+    private Double width;
+
+    public Rectangle(String name, Double length, Double width) {
+        super(name, 4);
+        this.length = length;
+        this.width = width;
     }
 
     @Override
-    public String getPerimeter() {
-        Double per = 0.0;
-        for (int i = 0; i < sides.length; i++) {
-            per+=sides[i];
-        }
-        return "Периметр " + name + "а"+ ": " + per.toString();
+    public double getArea() {
+        return length*width;
     }
 
+    @Override
+    public double getPerimeter() {
+        return 2*length+2*width;
+    }
+
+    @Override
+    public String toString() {
+        return  "Прямоугольник " + name +
+                ", длина " + length +
+                ", ширина " + width + ", площадь фигуры: " + getArea() + ", периметр фигуры: " + getPerimeter();
+    }
 }
+

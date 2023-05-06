@@ -1,8 +1,9 @@
 package figures;
 
+import figures.base.Console;
+
 public class Program {
     public static void main(String[] args) {
-    Repos repos = new Repos();
-        System.out.println(repos.getInfoRepos());
+        Console figuresConsole = new FiguresConsole();
     }
 }
